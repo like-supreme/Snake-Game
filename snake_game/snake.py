@@ -1,8 +1,3 @@
-"""snake classımız burada olacak"""
-
-# snake sınıfımız ne yapacak?
-#1 yılanı oluşturcak 3 kare halinde ve pozisyona oturtacak
-#2 yılanı hareket ettirecek
 from turtle import Turtle
 STARTING_POSITIONS = [(0,0),(-20,0),(-40,0)]
 MOVE_DISTANCE = 20
@@ -37,7 +32,7 @@ class Snake:
         self.add_segments(self.segments[-1].position())
 
     def move_snake(self):
-        for seg_num in range(len(self.segments) - 1 , 0 , -1): # start = 2  , stop = 0   , step = -1: start stop step işe yaramaz çünkü argüman kabul etmiyor. görselleştirmek için güzel
+        for seg_num in range(len(self.segments) - 1 , 0 , -1): 
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x , new_y)
@@ -55,3 +50,4 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
